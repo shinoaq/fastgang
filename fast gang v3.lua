@@ -1,4 +1,5 @@
 script_name ("fast gang")
+script_version("09.05.2019")
 
 function _()
 	return 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
@@ -20,7 +21,7 @@ u8 = encoding.UTF8
 function main()
 	if not isSampLoaded() or not isSampfuncsLoaded() then return end
 	while not isSampAvailable() do wait(100) end
-	autoupdate("https://raw.githubusercontent.com/shinoaq/fastgang/master/version.json?token=AKNXPZMWURBYZNO3EEBI3PS42PVQ6", '['..string.upper(thisScript().name)..']: ', "тут ссылка на ваш сайт/url вашего скрипта на форуме (если нет, оставьте как в json)")
+	autoupdate("https://raw.githubusercontent.com/shinoaq/fastgang/master/version.json?token=AKNXPZMWURBYZNO3EEBI3PS42PVQ6", '['..string.upper(thisScript().name)..']: ', "vk.com/id1")
 	repeat
 		wait(0)
 	until sampIsLocalPlayerSpawned()
@@ -46,7 +47,7 @@ function main()
 	while true do
 		wait(0)
 		
-			resid, pid = sampGetPlayerIdByCharHandle(PLAYER_PED)  -- получения ника для вывода инфы юзания пива/спранка
+			resid, pid = sampGetPlayerIdByCharHandle(PLAYER_PED)  -- РїРѕР»СѓС‡РµРЅРёСЏ РЅРёРєР° РґР»СЏ РІС‹РІРѕРґР° РёРЅС„С‹ СЋР·Р°РЅРёСЏ РїРёРІР°/СЃРїСЂР°РЅРєР°
 			pname = sampGetPlayerNickname(pid)
 			
 			imgui.Process = bEnable.v or main_window_state.v
@@ -73,11 +74,11 @@ function main()
 			drink1 = not drink1
 			sampSendClickTextdraw(593)
 			sampSendClickTextdraw(593)
-			sampAddChatMessage(''.. pname.. ' выпил(а) бутылку пива', 0xC2A2DA)
+			sampAddChatMessage(''.. pname.. ' РІС‹РїРёР»(Р°) Р±СѓС‚С‹Р»РєСѓ РїРёРІР°', 0xC2A2DA)
 		end
 		if drink2 then
 			drink2 = not drink2
-			sampAddChatMessage (''.. pname.. ' выпил(а) банку спранка', 0xC2A2Da)
+			sampAddChatMessage (''.. pname.. ' РІС‹РїРёР»(Р°) Р±Р°РЅРєСѓ СЃРїСЂР°РЅРєР°', 0xC2A2Da)
 			for k = 0, 20 do
 			sampSendClickTextdraw(591)
 			end
@@ -220,38 +221,38 @@ function imgui.OnDrawFrame()
         imgui.SetNextWindowPos(imgui.ImVec2(sw / 2, sh / 2), imgui.Cond.FirstUseEver, imgui.ImVec2(0.5, 0.5))
         imgui.SetNextWindowSize(imgui.ImVec2(512, 287), imgui.Cond.FirstUseEver)
     imgui.Begin('Commands', main_window_state, imgui.WindowFlags.NoCollapse + imgui.WindowFlags.NoResize + imgui.WindowFlags.NoMove)
-    imgui.Text(u8('/eat1 - Пополнить сытость'))
+    imgui.Text(u8('/eat1 - РџРѕРїРѕР»РЅРёС‚СЊ СЃС‹С‚РѕСЃС‚СЊ'))
 		imgui.SameLine()
-        imgui.TextQuestion(u8('Текст использования виден лишь тебе'))
-	imgui.Text(u8('/sprnuk1 - Пополнить HP спранком'))
+        imgui.TextQuestion(u8('РўРµРєСЃС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РІРёРґРµРЅ Р»РёС€СЊ С‚РµР±Рµ'))
+	imgui.Text(u8('/sprnuk1 - РџРѕРїРѕР»РЅРёС‚СЊ HP СЃРїСЂР°РЅРєРѕРј'))
 		imgui.SameLine()
-        imgui.TextQuestion(u8('Текст использования виден лишь тебе'))
-	imgui.Text(u8('/beer1 - Пополнить HP пивом'))
+        imgui.TextQuestion(u8('РўРµРєСЃС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РІРёРґРµРЅ Р»РёС€СЊ С‚РµР±Рµ'))
+	imgui.Text(u8('/beer1 - РџРѕРїРѕР»РЅРёС‚СЊ HP РїРёРІРѕРј'))
 		imgui.SameLine()
-        imgui.TextQuestion(u8('Текст использования виден лишь тебе'))
-	imgui.Text(u8('/fix carname - Быстрый спавн личного Т/С'))
+        imgui.TextQuestion(u8('РўРµРєСЃС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РІРёРґРµРЅ Р»РёС€СЊ С‚РµР±Рµ'))
+	imgui.Text(u8('/fix carname - Р‘С‹СЃС‚СЂС‹Р№ СЃРїР°РІРЅ Р»РёС‡РЅРѕРіРѕ Рў/РЎ'))
 		imgui.SameLine()
-        imgui.TextQuestion(u8('Регистр не учитывается\nДостаточно первых букв названия авто'))
-	imgui.Text(u8('Сокращенные команды:\n/us - Употребить наркотики\n/ar - Употребить адреналин\n/hl - Использовать аптечку\n/de - Deagle\n/sh - Shotgun\n/m4 - M4\n/ak - AK-47\n/ri - Rifle\n/sn - Sniper\n/uzi - UZI\n/sm - MP5'))
+        imgui.TextQuestion(u8('Р РµРіРёСЃС‚СЂ РЅРµ СѓС‡РёС‚С‹РІР°РµС‚СЃСЏ\nР”РѕСЃС‚Р°С‚РѕС‡РЅРѕ РїРµСЂРІС‹С… Р±СѓРєРІ РЅР°Р·РІР°РЅРёСЏ Р°РІС‚Рѕ'))
+	imgui.Text(u8('РЎРѕРєСЂР°С‰РµРЅРЅС‹Рµ РєРѕРјР°РЅРґС‹:\n/us - РЈРїРѕС‚СЂРµР±РёС‚СЊ РЅР°СЂРєРѕС‚РёРєРё\n/ar - РЈРїРѕС‚СЂРµР±РёС‚СЊ Р°РґСЂРµРЅР°Р»РёРЅ\n/hl - РСЃРїРѕР»СЊР·РѕРІР°С‚СЊ Р°РїС‚РµС‡РєСѓ\n/de - Deagle\n/sh - Shotgun\n/m4 - M4\n/ak - AK-47\n/ri - Rifle\n/sn - Sniper\n/uzi - UZI\n/sm - MP5'))
 		imgui.SameLine(150)
-        imgui.TextQuestion(u8('Через пробел указывать количество'))
-	imgui.Text(u8('Автоматические функции:'))
+        imgui.TextQuestion(u8('Р§РµСЂРµР· РїСЂРѕР±РµР» СѓРєР°Р·С‹РІР°С‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ'))
+	imgui.Text(u8('РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёРµ С„СѓРЅРєС†РёРё:'))
 		imgui.SameLine()
 	imgui.Text(u8('SkipReportDialog'))
 		imgui.SameLine()
-		imgui.TextQuestion(u8('Отключает окно ответа репорта'))
+		imgui.TextQuestion(u8('РћС‚РєР»СЋС‡Р°РµС‚ РѕРєРЅРѕ РѕС‚РІРµС‚Р° СЂРµРїРѕСЂС‚Р°'))
 		imgui.SameLine()
 	imgui.Text(u8('AntiFreeze'))
 		imgui.SameLine()
-		imgui.TextQuestion(u8('Отсутствие фриза при входе/выходе из интерьера'))
+		imgui.TextQuestion(u8('РћС‚СЃСѓС‚СЃС‚РІРёРµ С„СЂРёР·Р° РїСЂРё РІС…РѕРґРµ/РІС‹С…РѕРґРµ РёР· РёРЅС‚РµСЂСЊРµСЂР°'))
 		imgui.SameLine()
 	imgui.Text(u8('Auto-Fill'))
 		imgui.SameLine()
-		imgui.TextQuestion(u8('Автоматическая заправка транспорта на АЗС'))
+		imgui.TextQuestion(u8('РђРІС‚РѕРјР°С‚РёС‡РµСЃРєР°СЏ Р·Р°РїСЂР°РІРєР° С‚СЂР°РЅСЃРїРѕСЂС‚Р° РЅР° РђР—РЎ'))
 		imgui.SameLine()
 	imgui.Text(u8('Auto-Buy'))
 		imgui.SameLine()
-		imgui.TextQuestion(u8('Автоматическая закупка вещей в 24/7 или АЗС'))
+		imgui.TextQuestion(u8('РђРІС‚РѕРјР°С‚РёС‡РµСЃРєР°СЏ Р·Р°РєСѓРїРєР° РІРµС‰РµР№ РІ 24/7 РёР»Рё РђР—РЎ'))
 	imgui.End()
 	end
 	if bEnable.v then
@@ -262,7 +263,7 @@ function imgui.OnDrawFrame()
             imgui.InputInt(u8(v), iBuffers_score[k])
             imgui.PopItemWidth()
         end
-        if imgui.Button(u8"Купить") then
+        if imgui.Button(u8"РљСѓРїРёС‚СЊ") then
 			for k, v in pairs(iBuffers_score) do
                 for i = 0, v.v do 
                     if v.v > 0 then 
@@ -302,14 +303,14 @@ end
 local sampev = require 'lib.samp.events'
 
 function sampev.onShowDialog(id, style, title, but1, but2, text)
-	if title:find("Магазин$") and not bBuy and not bPaused then
+	if title:find("РњР°РіР°Р·РёРЅ$") and not bBuy and not bPaused then
 		tScore = {}
 		iBuffers_score = {}
 		dialogID = id
 		local i = -1
 		for var in text:gmatch("[^\r\n]+") do
 			local s, _ = var:gsub("\t{.+}%d+%$", "")
-			if not s:find("Предмет\t+Цена") then
+			if not s:find("РџСЂРµРґРјРµС‚\t+Р¦РµРЅР°") then
 				local s, _ = s:gsub("{.+}", "")
 				i = i + 1
 				tScore[i] = s
@@ -336,7 +337,7 @@ function sampev.onShowDialog(id, style, title, but1, but2, text)
 			return false
 		end
 	end
-	if fix and title:match('Мой транспорт') then
+	if fix and title:match('РњРѕР№ С‚СЂР°РЅСЃРїРѕСЂС‚') then
 		text = text .. '\n'
 		for str in text:gmatch('.-\n') do
 			str = str:lower()
@@ -354,7 +355,7 @@ function usedrugs(slot0)
 	if tonumber(slot0) then
 		sampSendChat(string.format("/usedrugs %d", tonumber(slot0)))
 	else
-		sampAddChatMessage("[fast gang]:{FFFFFF} Вы не ввели количество.", 0xFF0000)
+		sampAddChatMessage("[fast gang]:{FFFFFF} Р’С‹ РЅРµ РІРІРµР»Рё РєРѕР»РёС‡РµСЃС‚РІРѕ.", 0xFF0000)
 	end
 end
 
@@ -397,21 +398,21 @@ function autoupdate(json_url, prefix, url)
               lua_thread.create(function(prefix)
                 local dlstatus = require('moonloader').download_status
                 local color = -1
-                sampAddChatMessage((prefix..'Обнаружено обновление. Пытаюсь обновиться c '..thisScript().version..' на '..updateversion), color)
+                sampAddChatMessage((prefix..'РћР±РЅР°СЂСѓР¶РµРЅРѕ РѕР±РЅРѕРІР»РµРЅРёРµ. РџС‹С‚Р°СЋСЃСЊ РѕР±РЅРѕРІРёС‚СЊСЃСЏ c '..thisScript().version..' РЅР° '..updateversion), color)
                 wait(250)
                 downloadUrlToFile(updatelink, thisScript().path,
                   function(id3, status1, p13, p23)
                     if status1 == dlstatus.STATUS_DOWNLOADINGDATA then
-                      print(string.format('Загружено %d из %d.', p13, p23))
+                      print(string.format('Р—Р°РіСЂСѓР¶РµРЅРѕ %d РёР· %d.', p13, p23))
                     elseif status1 == dlstatus.STATUS_ENDDOWNLOADDATA then
-                      print('Загрузка обновления завершена.')
-                      sampAddChatMessage((prefix..'Обновление завершено!'), color)
+                      print('Р—Р°РіСЂСѓР·РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ Р·Р°РІРµСЂС€РµРЅР°.')
+                      sampAddChatMessage((prefix..'РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РІРµСЂС€РµРЅРѕ!'), color)
                       goupdatestatus = true
                       lua_thread.create(function() wait(500) thisScript():reload() end)
                     end
                     if status1 == dlstatus.STATUSEX_ENDDOWNLOAD then
                       if goupdatestatus == nil then
-                        sampAddChatMessage((prefix..'Обновление прошло неудачно. Запускаю устаревшую версию..'), color)
+                        sampAddChatMessage((prefix..'РћР±РЅРѕРІР»РµРЅРёРµ РїСЂРѕС€Р»Рѕ РЅРµСѓРґР°С‡РЅРѕ. Р—Р°РїСѓСЃРєР°СЋ СѓСЃС‚Р°СЂРµРІС€СѓСЋ РІРµСЂСЃРёСЋ..'), color)
                         update = false
                       end
                     end
@@ -421,11 +422,11 @@ function autoupdate(json_url, prefix, url)
               )
             else
               update = false
-              print('v'..thisScript().version..': Обновление не требуется.')
+              print('v'..thisScript().version..': РћР±РЅРѕРІР»РµРЅРёРµ РЅРµ С‚СЂРµР±СѓРµС‚СЃСЏ.')
             end
           end
         else
-          print('v'..thisScript().version..': Не могу проверить обновление. Смиритесь или проверьте самостоятельно на '..url)
+          print('v'..thisScript().version..': РќРµ РјРѕРіСѓ РїСЂРѕРІРµСЂРёС‚СЊ РѕР±РЅРѕРІР»РµРЅРёРµ. РЎРјРёСЂРёС‚РµСЃСЊ РёР»Рё РїСЂРѕРІРµСЂСЊС‚Рµ СЃР°РјРѕСЃС‚РѕСЏС‚РµР»СЊРЅРѕ РЅР° '..url)
           update = false
         end
       end
